@@ -22,8 +22,8 @@ class MainCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     func configureUI() {
-        configureCard(View2Background)
-        configureCard(view3Background)
+        //configureCard(View2Background)
+        //configureCard(view3Background)
 
     }
     func configureCard(_ view : UIView) {
@@ -37,7 +37,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     func configure(with item: mainMenuItem) {
 
-        titleLabel.text = item.title
+        titleLabel.text = "Label Label Label Label "
         iconImageView.image = UIImage(systemName: item.image)
     }
 

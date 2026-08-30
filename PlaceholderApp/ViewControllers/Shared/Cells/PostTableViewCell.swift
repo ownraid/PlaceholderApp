@@ -14,7 +14,6 @@ class PostTableViewCell: UITableViewCell {
     static let identifier = "PostTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureUI()
         // Initialization code
     }
 
@@ -28,17 +27,5 @@ class PostTableViewCell: UITableViewCell {
         
         titleLabel.text = post.title
         bodyLabel.text = post.body
-    }
-    func configureUI(){
-        mainBackgroundViewCard()
-    }
-    
-    func mainBackgroundViewCard(){
-        mainBackgroundView.layer.cornerRadius = 24
-        mainBackgroundView.layer.shadowColor = UIColor.black.cgColor
-        mainBackgroundView.layer.shadowOpacity = 0.10
-        mainBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        mainBackgroundView.layer.shadowRadius = 8
-        mainBackgroundView.layer.masksToBounds = false
     }
 }

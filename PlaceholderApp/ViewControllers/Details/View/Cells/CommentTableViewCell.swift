@@ -17,7 +17,6 @@ class CommentTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureUI()
         // Initialization code
     }
 
@@ -31,21 +30,5 @@ class CommentTableViewCell: UITableViewCell {
         emailLabel.text = comment.email
         bodyLabel.text = comment.body
     }
-    func configureUI(){
-        nameandEmailBackgroundViewcard()
-        mainBackgroundViewCard()
-        
-    }
-    func nameandEmailBackgroundViewcard() {
-        nameandEmailBackgroundView.layer.cornerRadius = 24
-        nameandEmailBackgroundView.layer.masksToBounds = false
-    }
-    func mainBackgroundViewCard(){
-        mainBackgroundView.layer.cornerRadius = 24
-        mainBackgroundView.layer.shadowColor = UIColor.black.cgColor
-        mainBackgroundView.layer.shadowOpacity = 0.10
-        mainBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        mainBackgroundView.layer.shadowRadius = 8
-        mainBackgroundView.layer.masksToBounds = false
-    }
+
 }

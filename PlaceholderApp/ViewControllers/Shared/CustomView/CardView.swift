@@ -54,14 +54,14 @@ class CardView: UIView {
     }
 
     @IBInspectable
-    var shadowOffsetX: CGFloat = 0 {
+    var shadowWidth: CGFloat = 0 {
         didSet {
             updateAppearance()
         }
     }
 
     @IBInspectable
-    var shadowOffsetY: CGFloat = 0 {
+    var shadowHeight: CGFloat = 0 {
         didSet {
             updateAppearance()
         }
@@ -76,7 +76,7 @@ class CardView: UIView {
         layer.shadowColor = shadowColor.cgColor
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowRadius
-        layer.shadowOffset = CGSize(width: shadowOffsetX, height: shadowOffsetY )
+        layer.shadowOffset = CGSize(width: shadowWidth, height: shadowHeight )
         layer.masksToBounds = false
     }
     override func prepareForInterfaceBuilder() {

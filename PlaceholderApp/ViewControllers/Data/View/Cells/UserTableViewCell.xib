@@ -21,25 +21,26 @@
                         <rect key="frame" x="20" y="10" width="280" height="24"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-Wy-qG0">
-                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="0.0" width="28" height="24"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z9M-RN-6J0">
-                                        <rect key="frame" x="5" y="3.6666666666666679" width="14" height="17"/>
-                                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
+                                        <rect key="frame" x="4" y="2.6666666666666661" width="20" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="SxQ-Cy-L7A"/>
+                                            <constraint firstAttribute="width" secondItem="Z9M-RN-6J0" secondAttribute="height" multiplier="9:10" id="zm5-07-Hwg"/>
+                                        </constraints>
+                                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="default"/>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Z9M-RN-6J0" secondAttribute="bottom" constant="5" id="5Q0-OI-8Bx"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="MCA-Pr-Ic6"/>
-                                    <constraint firstAttribute="trailing" secondItem="Z9M-RN-6J0" secondAttribute="trailing" constant="5" id="NvS-bJ-hxX"/>
-                                    <constraint firstItem="Z9M-RN-6J0" firstAttribute="top" secondItem="kf4-Wy-qG0" secondAttribute="top" constant="5" id="pdO-Kx-Xl1"/>
-                                    <constraint firstAttribute="width" secondItem="kf4-Wy-qG0" secondAttribute="height" multiplier="1:1" id="t9c-oI-vuV"/>
-                                    <constraint firstItem="Z9M-RN-6J0" firstAttribute="leading" secondItem="kf4-Wy-qG0" secondAttribute="leading" constant="5" id="yOv-1B-FNZ"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Z9M-RN-6J0" secondAttribute="trailing" constant="4" id="2px-RI-oOM"/>
+                                    <constraint firstItem="Z9M-RN-6J0" firstAttribute="leading" secondItem="kf4-Wy-qG0" secondAttribute="leading" constant="4" id="RyQ-GL-Ydb"/>
+                                    <constraint firstItem="Z9M-RN-6J0" firstAttribute="centerY" secondItem="kf4-Wy-qG0" secondAttribute="centerY" id="lC0-lh-k39"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5t-Jj-rEl">
-                                <rect key="frame" x="24" y="0.0" width="256" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5t-Jj-rEl">
+                                <rect key="frame" x="28" y="0.0" width="252" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

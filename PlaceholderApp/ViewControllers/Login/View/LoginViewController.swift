@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
     }
     
     private func configureUI(){
-        //configureStackViewBackground()
         passwordTextField.isSecureTextEntry = true
         setupPasswordButton()
     }
@@ -92,15 +91,6 @@ class LoginViewController: UIViewController {
                 passwordTextField.layer.borderColor = UIColor.systemRed.cgColor
                 showAlert(title: "Login Failed", message: "Username or Password is incorrect")
         }
-    }
-    
-    private func configureStackViewBackground(){
-        StackViewBackground.layer.cornerRadius = 24
-        StackViewBackground.layer.shadowColor = UIColor.black.cgColor
-        StackViewBackground.layer.shadowOpacity = 0.20
-        StackViewBackground.layer.shadowOffset = CGSize(width: 0, height: 8)
-        StackViewBackground.layer.shadowRadius = 8
-        StackViewBackground.layer.masksToBounds = false
     }
     
    private func resetTextFieldBorders() {

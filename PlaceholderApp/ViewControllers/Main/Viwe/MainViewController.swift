@@ -26,17 +26,6 @@ class MainViewController: UIViewController , UICollectionViewDelegate , UICollec
     
     func configureUI() {
         usernameLabel.text = username
-        configureCard(welcomeCard)
-        configureCard(collectionViewCard)
-    }
-    func configureCard(_ view : UIView) {
-        view.layer.cornerRadius = 24
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.20
-        view.layer.shadowOffset = CGSize(width: 0, height: 8)
-        view.layer.shadowRadius = 8
-        view.layer.masksToBounds = false
-        
     }
     func setupCollectionView(){
         collectionView.delegate = self
@@ -70,12 +59,13 @@ class MainViewController: UIViewController , UICollectionViewDelegate , UICollec
         cell.configure(with: item)
         return cell
     }
+
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
 
         let dataVC = DataViewController()
-
+            
         switch indexPath.item {
 
         case 0:
@@ -92,16 +82,5 @@ class MainViewController: UIViewController , UICollectionViewDelegate , UICollec
         }
             navigationController?.pushViewController(dataVC, animated: true)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
