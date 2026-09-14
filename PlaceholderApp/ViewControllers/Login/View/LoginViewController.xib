@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="PlaceholderApp" customModuleProvider="target">
             <connections>
-                <outlet property="StackViewBackground" destination="fkr-Ay-w95" id="ykk-T1-rXl"/>
+                <outlet property="loginButton" destination="Vt8-DL-ZAJ" id="oaf-Ek-FXG"/>
                 <outlet property="passwordTextField" destination="DD7-Xo-5vA" id="SKY-GU-zT9"/>
                 <outlet property="usernameTextField" destination="98W-cz-c9W" id="2GB-1j-sa4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -55,7 +55,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bly-Ca-Cp4">
                                     <rect key="frame" x="0.0" y="58.666666666666629" width="302" height="100"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98W-cz-c9W">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98W-cz-c9W" customClass="CustomTextField" customModule="PlaceholderApp" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="302" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="2oC-ao-tMM"/>
@@ -63,13 +63,19 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" textContentType="name"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DD7-Xo-5vA">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DD7-Xo-5vA" customClass="CustomTextField" customModule="PlaceholderApp" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="60" width="302" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="7zB-Xi-dKj"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="PasswordField" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </textField>
                                     </subviews>
                                 </stackView>
@@ -78,9 +84,6 @@
                                     <color key="tintColor" red="0.10196078431372549" green="0.37254901960784315" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Login"/>
-                                    <connections>
-                                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="Ku3-D5-fS5"/>
-                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

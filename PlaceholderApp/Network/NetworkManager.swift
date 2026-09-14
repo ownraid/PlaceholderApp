@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import RxAlamofire
 
 final class NetworkManager {
     static let shared = NetworkManager()

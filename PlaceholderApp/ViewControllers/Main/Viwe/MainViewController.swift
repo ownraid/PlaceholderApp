@@ -13,6 +13,7 @@ class MainViewController: UIViewController , UICollectionViewDelegate , UICollec
     @IBOutlet weak var welcomeCard: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+
     let viewModel = mainViewModel()
     var username: String?
 

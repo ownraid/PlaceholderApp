@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+import RxRelay
 
-final class LoginViewModel {
+class LoginViewModel {
+
+    let userStore = MockUserStore()
+    let userNameRelay = BehaviorRelay<String>(value: "")
+    let passwordRelay = BehaviorRelay<String>(value: "")
 
     enum LoginResult {
         case success(LoginUser)
@@ -18,51 +25,52 @@ final class LoginViewModel {
         case invalidUsernameOrPassword
     }
 
-    private let userStore = MockUserStore()
-
-    func login(username: String, password: String) -> LoginResult {
-
-        let trimmedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        if trimmedUsername == "" && password.isEmpty {
-            return .emptyFields
-        }
-
-        if trimmedUsername.isEmpty {
-            return .emptyUsername
-        }
-
-        if password.isEmpty {
-            return .emptyPassword
-        }
-        
-        for user in userStore.user {
-
-            if user.username == trimmedUsername {
-
-                if user.password == password {
-                    return .success(user)
-                } else {
-                    return .wrongPassword
-                }
-
-            }
-
-        }
-
-        return .invalidUsernameOrPassword
-        
-        /*   ask ammar 
-        guard let user = userStore.user.first(where: {
-            $0.username == trimmedUsername
-        }) else {
-            return .invalidUsernameOrPassword
-        }
-
-        guard user.password == password else {
-            return .wrongPassword
-        }
-         return .success(user)
-         */
+    struct Input {
+        //let usernameRelay: BehaviorRelay<String>
+        //let passwordRelay: BehaviorRelay<String>
+        let loginTap: Observable<Void>
     }
+
+    struct Output {
+        let validationResult: Driver<LoginResult>
+    }
+
+    func transform(input: Input) -> Output {
+            let result = input.loginTap
+                .map { [weak self] _ -> LoginResult in
+                    guard let self = self else { return .invalidUsernameOrPassword }
+                    
+                   
+                    let username = userNameRelay.value
+                    let password = passwordRelay.value
+                    let trimmedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
+                    
+                    if trimmedUsername.isEmpty && password.isEmpty {
+                        return .emptyFields
+                    }
+                    if trimmedUsername.isEmpty {
+                        return .emptyUsername
+                    }
+                    if password.isEmpty {
+                        return .emptyPassword
+                    }
+                    
+                    for user in self.userStore.user {
+                        if user.username == trimmedUsername {
+                            if user.password == password {
+                                return .success(user)
+                            } else {
+                                return .wrongPassword
+                            }
+                        }
+                    }
+                    
+                    
+                    return .invalidUsernameOrPassword
+                }
+            
+            return Output(
+                validationResult: result.asDriver(onErrorJustReturn: .invalidUsernameOrPassword)
+            )
+        }
 }

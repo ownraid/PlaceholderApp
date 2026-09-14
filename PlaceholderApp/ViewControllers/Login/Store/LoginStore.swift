@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//final class MockUserStore
 class MockUserStore{
     let user : [LoginUser] = [
         LoginUser(username:"own" ,password:"own123"),
